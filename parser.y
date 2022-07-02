@@ -70,8 +70,6 @@ char currentScope[50]; /* global or the name of the function */
 
 %%
 
-//test push
-
 Program: DeclList  
 ;
 
@@ -83,38 +81,38 @@ Decl:	VarDecl
 	| StmtList
 ;
 
-VarDecl:	TYPE ID SEMICOLON	{ printf("\n RECOGNIZED RULE: Variable declaration %s\n", $2);
+VarDecl:	TYPE ID SEMICOLON	{ printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $2);
 								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 								}
 
 			|TYPE ID EQ NUMBER SEMICOLON	{
-								  printf("\n RECOGNIZED RULE: Variable declaration %s\n", $2);
+								  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $2);
 								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 								}
 
 			|ID EQ NUMBER SEMICOLON	{
-								  printf("\n RECOGNIZED RULE: Variable declaration %s\n", $1);
+								  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $1);
 								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 								}
 			
 			|TYPE ID EQ CHARLITERAL SEMICOLON	{
-									  printf("\n RECOGNIZED RULE: Variable declaration %s\n", $2);
+									  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $2);
 									  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 									} 
 ;
 
 StmtList:	
-	| Stmt StmtList
+	| Expr StmtList
 ;
 
 Stmt:	SEMICOLON
 	| Expr SEMICOLON
 ;
 
-Expr:	ID { printf("\n RECOGNIZED RULE: Simplest expression\n"); }
-	| ID EQ ID 	{ printf("\n RECOGNIZED RULE: Assignment statement\n"); }
-	| ID EQ NUMBER 	{ printf("\n RECOGNIZED RULE: Assignment statement\n"); }
-	| WRITE ID 	{ printf("\n RECOGNIZED RULE: WRITE statement\n"); }
+Expr:	ID SEMICOLON { printf(" RECOGNIZED RULE: Simplest expression\n\n"); }
+	| ID EQ ID SEMICOLON	{ printf(" RECOGNIZED RULE: Assignment statement\n\n"); }
+	| ID EQ NUMBER SEMICOLON	{ printf(" RECOGNIZED RULE: Assignment statement\n\n"); }
+	| WRITE ID SEMICOLON	{ printf(" RECOGNIZED RULE: WRITE statement\n\n"); }
 
 %%
 
