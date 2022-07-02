@@ -70,6 +70,8 @@ char currentScope[50]; /* global or the name of the function */
 
 %%
 
+//test push
+
 Program: DeclList  
 ;
 
