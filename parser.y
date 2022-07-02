@@ -64,7 +64,7 @@ char currentScope[50]; /* global or the name of the function */
 %printer { fprintf(yyoutput, "%s", $$); } ID;
 %printer { fprintf(yyoutput, "%d", $$); } NUMBER;
 
-%type <ast> Program DeclList Decl VarDecl StmtList Stmt Expr
+%type <ast> Program DeclList Decl VarDecl StmtList /*Stmt*/ Expr
 
 %start Program
 
@@ -89,11 +89,6 @@ VarDecl:	TYPE ID SEMICOLON	{ printf(" RECOGNIZED RULE: Variable declaration %s\n
 								  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $2);
 								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 								}
-
-			|ID EQ NUMBER SEMICOLON	{
-								  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $1);
-								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
-								}
 			
 			|TYPE ID EQ CHARLITERAL SEMICOLON	{
 									  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $2);
@@ -105,9 +100,9 @@ StmtList:
 	| Expr StmtList
 ;
 
-Stmt:	SEMICOLON
+/* Stmt:	SEMICOLON
 	| Expr SEMICOLON
-;
+; */
 
 Expr:	ID SEMICOLON { printf(" RECOGNIZED RULE: Simplest expression\n\n"); }
 	| ID EQ ID SEMICOLON	{ printf(" RECOGNIZED RULE: Assignment statement\n\n"); }
