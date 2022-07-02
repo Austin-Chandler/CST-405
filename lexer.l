@@ -44,12 +44,14 @@ CHARLITERAL '([^'\n]|\\n|\\\\)'
 "char"  {
 	words++; chars += strlen(yytext);
 	printf("%s : TYPE\n", yytext);
+	yylval.string = strdup(yytext);
     return TYPE;
 }
 
 "int"  {
 	words++; chars += strlen(yytext);
 	printf("%s : TYPE\n", yytext);
+	yylval.string = strdup(yytext);
     return TYPE;
      
 }
@@ -57,6 +59,7 @@ CHARLITERAL '([^'\n]|\\n|\\\\)'
 "if"  {
 	words++; chars += strlen(yytext);
 	printf("%s : IF STATEMENT\n", yytext);
+	yylval.string = strdup(yytext);
     return IF;
      
 }
@@ -64,6 +67,7 @@ CHARLITERAL '([^'\n]|\\n|\\\\)'
 "else"  {
 	words++; chars += strlen(yytext);
 	printf("%s : ELSE STATEMENT\n", yytext);
+	yylval.string = strdup(yytext);
     return ELSE;
      
 }
@@ -71,6 +75,7 @@ CHARLITERAL '([^'\n]|\\n|\\\\)'
 "while"  {
 	words++; chars += strlen(yytext);
 	printf("%s : WHILE STATEMENT\n", yytext);
+	yylval.string = strdup(yytext);
     return WHILE;
      
 }
@@ -78,6 +83,7 @@ CHARLITERAL '([^'\n]|\\n|\\\\)'
 "print"  {
 	words++; chars += strlen(yytext);
 	printf("%s : PRINT STATEMENT\n", yytext);
+	yylval.string = strdup(yytext);
     return PRINT;
      
 }
@@ -262,6 +268,7 @@ CHARLITERAL '([^'\n]|\\n|\\\\)'
 {ID}  {
 	chars += strlen(yytext);
 	printf("%s : ID\n", yytext); 
+	yylval.string = strdup(yytext);
     return ID;
 
 } 
@@ -269,6 +276,7 @@ CHARLITERAL '([^'\n]|\\n|\\\\)'
 {NUMBER}  {
 	chars += strlen(yytext);
 	printf("%s : NUMBER\n", yytext);
+	yylval.number = atoi(strdup(yytext));
     return NUMBER;
      
 }

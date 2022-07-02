@@ -496,18 +496,18 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  15
+#define YYFINAL  14
 /* YYLAST -- Last index in YYTABLE.  */
 #define YYLAST   30
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  35
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  8
+#define YYNNTS  7
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  18
+#define YYNRULES  16
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  31
+#define YYNSTATES  32
 
 #define YYUNDEFTOK  2
 #define YYMAXUTOK   289
@@ -558,7 +558,7 @@ static const yytype_int8 yytranslate[] =
 static const yytype_int8 yyrline[] =
 {
        0,    73,    73,    76,    77,    80,    81,    84,    88,    93,
-      98,   104,   105,   108,   109,   112,   113,   114,   115
+      98,   104,   105,   112,   113,   114,   115
 };
 #endif
 
@@ -573,7 +573,7 @@ static const char *const yytname[] =
   "MINUS", "DIVIDE", "MODULUS", "LPAREN", "RPAREN", "LBRACE", "RBRACE",
   "COMMA", "SEMICOLON", "STRINGLITERAL", "CHARLITERAL", "WRITE", "ID",
   "NUMBER", "$accept", "Program", "DeclList", "Decl", "VarDecl",
-  "StmtList", "Stmt", "Expr", YY_NULLPTR
+  "StmtList", "Expr", YY_NULLPTR
 };
 #endif
 
@@ -589,7 +589,7 @@ static const yytype_int16 yytoknum[] =
 };
 # endif
 
-#define YYPACT_NINF (-31)
+#define YYPACT_NINF (-29)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -603,10 +603,10 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -3,   -22,   -31,   -20,    -4,    15,   -31,    -3,   -31,   -31,
-     -27,   -13,   -17,   -31,   -30,   -31,   -31,    -1,   -31,   -31,
-     -24,   -31,   -31,   -11,   -25,   -10,    -9,   -31,   -31,   -31,
-     -31
+      -3,   -18,   -14,   -17,    16,   -29,    -3,   -29,   -29,   -24,
+     -16,   -12,   -28,   -29,   -29,   -29,   -15,   -29,   -27,   -29,
+     -29,   -11,    -9,   -23,    -8,    -7,   -29,   -29,    -6,   -29,
+     -29,   -29
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -614,22 +614,22 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-      11,     0,    13,     0,    15,     0,     2,     4,     5,     6,
-      11,     0,     0,    18,     0,     1,     3,    15,    12,    14,
-       0,     7,    16,     0,     0,     0,     0,     9,    17,    10,
-       8
+      11,     0,     0,     0,     0,     2,     4,     5,     6,    11,
+       0,     0,     0,    13,     1,     3,     0,    12,     0,     7,
+      16,     0,     0,     0,     0,     0,    14,     9,     0,    10,
+       8,    15
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -31,   -31,    14,   -31,   -31,    12,   -31,   -31
+     -29,   -29,    18,   -29,   -29,    17,   -29
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     5,     6,     7,     8,     9,    10,    11
+      -1,     4,     5,     6,     7,     8,     9
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -637,17 +637,17 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       1,    20,     2,    22,    23,     3,    17,    25,    22,    28,
-      26,    12,    21,    13,    14,    15,    19,    24,    27,    29,
-      30,    16,    18,     0,     0,     0,     2,     0,     0,     3,
-       4
+       1,    12,    18,    23,    24,    21,    22,    25,     2,    16,
+      21,    28,    13,    19,    13,    10,    14,    20,    26,    11,
+      27,    29,    30,    31,    15,     0,    17,     0,     0,     2,
+       3
 };
 
 static const yytype_int8 yycheck[] =
 {
-       3,    18,    29,    33,    34,    32,    33,    31,    33,    34,
-      34,    33,    29,    33,    18,     0,    29,    18,    29,    29,
-      29,     7,    10,    -1,    -1,    -1,    29,    -1,    -1,    32,
+       3,    18,    18,    18,    31,    33,    34,    34,    32,    33,
+      33,    34,    29,    29,    29,    33,     0,    29,    29,    33,
+      29,    29,    29,    29,     6,    -1,     9,    -1,    -1,    32,
       33
 };
 
@@ -655,24 +655,24 @@ static const yytype_int8 yycheck[] =
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,    29,    32,    33,    36,    37,    38,    39,    40,
-      41,    42,    33,    33,    18,     0,    37,    33,    40,    29,
-      18,    29,    33,    34,    18,    31,    34,    29,    34,    29,
-      29
+       0,     3,    32,    33,    36,    37,    38,    39,    40,    41,
+      33,    33,    18,    29,     0,    37,    33,    40,    18,    29,
+      29,    33,    34,    18,    31,    34,    29,    29,    34,    29,
+      29,    29
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
        0,    35,    36,    37,    37,    38,    38,    39,    39,    39,
-      39,    40,    40,    41,    41,    42,    42,    42,    42
+      39,    40,    40,    41,    41,    41,    41
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     2,     1,     1,     1,     3,     5,     4,
-       5,     0,     2,     1,     2,     1,     3,     3,     2
+       5,     0,     2,     2,     4,     4,     3
 };
 
 
@@ -1385,7 +1385,7 @@ yyreduce:
     {
   case 7:
 #line 84 "parser.y"
-                                        { printf("\n RECOGNIZED RULE: Variable declaration %s\n", (yyvsp[-1].string));
+                                        { printf(" RECOGNIZED RULE: Variable declaration %s\n\n", (yyvsp[-1].string));
 								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 								}
 #line 1392 "parser.tab.c"
@@ -1394,7 +1394,7 @@ yyreduce:
   case 8:
 #line 88 "parser.y"
                                                         {
-								  printf("\n RECOGNIZED RULE: Variable declaration %s\n", (yyvsp[-3].string));
+								  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", (yyvsp[-3].string));
 								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 								}
 #line 1401 "parser.tab.c"
@@ -1403,7 +1403,7 @@ yyreduce:
   case 9:
 #line 93 "parser.y"
                                                 {
-								  printf("\n RECOGNIZED RULE: Variable declaration %s\n", (yyvsp[-3].string));
+								  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", (yyvsp[-3].string));
 								  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 								}
 #line 1410 "parser.tab.c"
@@ -1412,33 +1412,33 @@ yyreduce:
   case 10:
 #line 98 "parser.y"
                                                                 {
-									  printf("\n RECOGNIZED RULE: Variable declaration %s\n", (yyvsp[-3].string));
+									  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", (yyvsp[-3].string));
 									  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
 									}
 #line 1419 "parser.tab.c"
     break;
 
-  case 15:
+  case 13:
 #line 112 "parser.y"
-           { printf("\n RECOGNIZED RULE: Simplest expression\n"); }
+                     { printf(" RECOGNIZED RULE: Simplest expression\n\n"); }
 #line 1425 "parser.tab.c"
     break;
 
-  case 16:
+  case 14:
 #line 113 "parser.y"
-                        { printf("\n RECOGNIZED RULE: Assignment statement\n"); }
+                                { printf(" RECOGNIZED RULE: Assignment statement\n\n"); }
 #line 1431 "parser.tab.c"
     break;
 
-  case 17:
+  case 15:
 #line 114 "parser.y"
-                        { printf("\n RECOGNIZED RULE: Assignment statement\n"); }
+                                        { printf(" RECOGNIZED RULE: Assignment statement\n\n"); }
 #line 1437 "parser.tab.c"
     break;
 
-  case 18:
+  case 16:
 #line 115 "parser.y"
-                        { printf("\n RECOGNIZED RULE: WRITE statement\n"); }
+                                { printf(" RECOGNIZED RULE: WRITE statement\n\n"); }
 #line 1443 "parser.tab.c"
     break;
 
