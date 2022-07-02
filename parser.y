@@ -92,7 +92,7 @@ VarDecl:	TYPE ID SEMICOLON	{ printf(" RECOGNIZED RULE: Variable declaration %s\n
 			
 			|TYPE ID EQ CHARLITERAL SEMICOLON	{
 									  printf(" RECOGNIZED RULE: Variable declaration %s\n\n", $2);
-									  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3);
+									  //printf("Items recognized: %s, %s, %c \n", $1, $2, $3); 
 									} 
 ;
 
