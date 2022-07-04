@@ -25,6 +25,8 @@ char currentScope[50]; /* global or the name of the function */
 	struct AST* ast;
 }
 
+// comment test
+
 %token <string> TYPE
 %token <string> IF
 %token <string> ELSE
